@@ -1,16 +1,20 @@
 // config/db.js
+const mysql = require('mysql2');
 
-const mysql = require('mysql2/promise');
-
-const pool = mysql.createPool({
+const connection = mysql.createConnection({
   host: 'mysql.railway.internal',
   user: 'root',
   password: 'LmDTvYfirIEMveucbORPUpCEELvulOOa',
   database: 'railway',
-  port: 3306,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0
+  port: 3306
 });
 
-module.exports = pool;
+connection.connect((err) => {
+  if (err) {
+    console.error('Erro ao conectar no MySQL:', err);
+  } else {
+    console.log('🟢 Conexão com o MySQL estabelecida.');
+  }
+});
+
+module.exports = connection;

@@ -1,0 +1,41 @@
+/* ===== Variables ===== */
+:root {
+  --primary: #4B6CB7;
+  --secondary: #182848;
+  --background: #F4F7FA;
+  --white: #ffffff;
+  --text-dark: #1E1E2F;
+  --text-light: #6C757D;
+
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease-in-out;
+  --sidebar-width: 250px;
+}
+
+/* ===== Reset Básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Utilidades */
+.container {
+  padding: 1.5rem;
+}
+
+/* Ícones */
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
