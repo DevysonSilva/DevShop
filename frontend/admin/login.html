@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Acesso ao painel administrativo do DevShop" />
+  <title>Login - DevShop Admin</title>
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+  <div class="login-container">
+    <form class="login-box" id="loginForm">
+      <h2>PAINEL ADMINISTRATIVO</h2>
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" required />
+
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const senha = document.getElementById("senha").value;
+
+      try {
+        const res = await fetch("http://localhost:3000/api/admin/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, senha })
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          alert("Login realizado com sucesso!");
+          // Redirecionar depois
+          // window.location.href = "dashboard.html";
+        } else {
+          alert(data.mensagem || "Falha no login");
+        }
+      } catch (err) {
+        alert("Erro ao conectar com o servidor.");
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,50 +1,37 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Menu Admin</title>
-  <link rel="stylesheet" href="../styles/menu.css"/>
-</head>
-<body>
+<link rel="stylesheet" href="../styles/menu.css" />
 
-  <header>
-    <button id="toggleMenu">&#9776;</button>
-    <h1>Painel Admin</h1>
-  </header>
+<header class="topbar">
+  <button id="menuToggle" class="menu-toggle">☰</button>
+  <h1 class="logo">DevShop</h1>
+</header>
 
-  <nav class="sidebar" id="sidebar">
-    <ul>
-      <li class="section">LINKS RÁPIDOS</li>
-      <li><i class="icon">🏠</i> Painel</li>
-      <li><i class="icon">📦</i> Novo produto</li>
-      <li><i class="icon">🎁</i> Novo cupom</li>
-
-      <li class="section">CATÁLOGO</li>
-      <li><i class="icon">📦</i> Produtos</li>
-      <li><i class="icon">🔗</i> Categorias</li>
-      <li><i class="icon">🏷️</i> Coleções</li>
-      <li><i class="icon">#️⃣</i> Atributos</li>
-
-      <li class="section">OFERTA</li>
-      <li><i class="icon">📦</i> Pedidos</li>
-
-      <li class="section">CLIENTE</li>
-      <li><i class="icon">👥</i> Clientes</li>
-
-      <li class="section">PROMOÇÃO</li>
-      <li><i class="icon">🎁</i> Cupons</li>
-
-      <li class="section">CMS</li>
-      <li><i class="icon">📄</i> Páginas</li>
-      <li><i class="icon">🧩</i> Widgets</li>
-    </ul>
-  </nav>
-
-  <main>
+<aside class="sidebar" id="sidebar">
+  <button class="close-btn" id="closeSidebar">✖</button>
+  <ul>
+    <li class="section">LINKS RÁPIDOS</li>
+    <li><i class="icon">🏠</i> Painel</li>
+    <li><i class="icon">📦</i> Novo produto</li>
+    <li><i class="icon">🎁</i> Novo cupom</li>
     
-  </main>
+    <li class="section">CATÁLOGO</li>
+    <li><i class="icon">📦</i> Produtos</li>
+    <li><i class="icon">🔗</i> Categorias</li>
+    <li><i class="icon">🏷️</i> Coleções</li>
+    <li><i class="icon">#️⃣</i> Atributos</li>
+    
+    <li class="section">OFERTA</li>
+    <li><i class="icon">📦</i> Pedidos</li>
+    
+    <li class="section">CLIENTE</li>
+    <li><i class="icon">👥</i> Clientes</li>
+    
+    <li class="section">PROMOÇÃO</li>
+    <li><i class="icon">🎁</i> Cupons</li>
+    
+    <li class="section">CMS</li>
+    <li><i class="icon">📄</i> Páginas</li>
+    <li><i class="icon">🧩</i> Widgets</li>
+  </ul>
+</aside>
 
-  <script src="../scripts/menu.js"></script>
-</body>
-</html>
+<script src="../scripts/menu.js"></script>

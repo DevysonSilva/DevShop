@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   <div id="menu-lateral"></div>
+  <div class="dashboard-container">
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+      <h1>Painel</h1>
+
+      <!-- Estatísticas de Vendas -->
+      <section class="stats">
+        <div class="chart-box">
+          <div class="chart-header">
+            <h3>Estatísticas de vendas</h3>
+            <div class="filters">
+              <button>Diário</button>
+              <button>Semanalmente</button>
+              <button>Mensal</button>
+            </div>
+          </div>
+          <canvas id="vendasChart"></canvas>
+        </div>
+
+        <!-- Vendas vitalícias -->
+        <div class="vital-box">
+          <h3>Vendas vitalícias</h3>
+          <ul>
+            <li>📦 9898 pedidos</li>
+            <li>💰 US$ 128.674.743,56</li>
+            <li>✅ 0% concluídos</li>
+            <li>❌ 0% cancelados</li>
+          </ul>
+          <canvas id="pizzaChart"></canvas>
+        </div>
+      </section>
+
+      <!-- Produtos mais vendidos -->
+      <section class="mais-vendidos">
+        <h3>Mais vendidos</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Preço</th>
+              <th>Vendidos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sapatos Nmd_r1</td>
+              <td>R$ 537,00</td>
+              <td>144.539</td>
+            </tr>
+            <tr>
+              <td>Calçados reflexivos Alphaedge 4D R</td>
+              <td>R$ 133,00</td>
+              <td>2.905</td>
+            </tr>
+            <tr>
+              <td>Tênis Edge para o dia do jogo</td>
+              <td>R$ 963,00</td>
+              <td>1.799</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    fetch('../partials/menu.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu-lateral').innerHTML = data;
+      });
+  </script>
+  <script src="../scripts/dashboard.js"></script>
+</body>
+</html>
